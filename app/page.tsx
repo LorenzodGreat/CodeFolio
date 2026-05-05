@@ -760,34 +760,44 @@ function Projects() {
 
       <div className="grid md:grid-cols-3 gap-6">
         <ProjectCard
-          title="CDSH Dashboard"
-          desc="CDSH is a structured digital solution focused on delivering a clean, user-friendly interface for managing and presenting information efficiently. The project emphasizes modern UI/UX principles, responsive design, and scalable architecture."
+          title="Career Development & Sustainability Hub - (CDSH) Dashboard"
+          desc="Built in Oracle Apex, CDSH is a structured digital solution focused on delivering a clean, user-friendly interface for managing and presenting information efficiently. The project emphasizes modern UI/UX principles, responsive design, and scalable architecture."
           imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oJQ1rUthjQgdB4Mhi6K3WfN5IRLseZxclkTu7"}
           tags={["Laravel", "PHP", "Ql/SQL", "Tailwind CSS", "CSS", "Oracle Apex"]}
+          link={"https://oracleapex.com/ords/r/career_development_and_sustainability_hub/cdsh-group39"}
+          githubLink={undefined}
         />
         <ProjectCard
-          title="PRESTEZA"
+          title="PRESTEZA (Coming Soon)"
           desc="Build and manage a full-featured modern ecommerce platform with customer shopping flows, secure checkout, account dashboards, and an admin control center—powered by Next.js, Supabase, and Stripe."
           imageSrc={"https://img.freepik.com/free-vector/coming-soon-background-with-focus-light-effect-design_1017-27277.jpg?semt=ais_hybrid&w=740&q=80"}
           tags={["Next.js", "Supabase", "Tailwind CSS", "CSS", "Stripe"]}
+          link={"https://presteza.vercel.app"}
+          githubLink={undefined}
         />
         <ProjectCard
           title="RecipeNest"
           desc="RecipeNest exists to make great food more discoverable. Whether you are planning weeknight dinners or looking for inspiration from chefs you admire, we want every visit to feel welcoming, practical, and genuinely useful in the kitchen."
           imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oNMbqSH8WKTF367o4yiEAuVLleJQPCYrv19xc"}
           tags={["Laravel", "PHP", "MySQL", "Tailwind CSS", "CSS", "Alpine.js"]}
+          link={undefined}
+          githubLink={"https://github.com/LorenzodGreat/RecipeNest-Group39-laravel"}
         />
         <ProjectCard
           title="RAF Tech"
           desc="R.A.F Security represents the apex of surveillance and response. We don't just secure spaces; we engineer peace of mind through unyielding professionalism and state-of-the-art intelligence."
           imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oaso7lbYYGXflTAjEkWe5DxvBS78Voa9u34y0"}
           tags={["Next.js", "TypeScript", "Tailwind CSS", "CSS", "Framer Motion"]}
+          link={"https://raf-tech.vercel.app"}
+          githubLink={undefined}
         />
         <ProjectCard
           title="Cornershop Jamaica (Coming Soon)"
           desc="Cornershop Jamaica is a platform for buying and selling products in Jamaica."
           imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oYK3wtFjkNQmzeUx9b0FXBtR6OHIhr1ZwnVSv"}
           tags={["Next.js", "TypeScript", "Tailwind CSS", "CSS", "Framer Motion"]}
+          link={undefined}
+          githubLink={undefined}
         />
       </div>
     </Section>
@@ -799,11 +809,15 @@ function ProjectCard({
   desc,
   imageSrc,
   tags,
+  link,
+  githubLink,
 }: {
   title: string;
   desc: string;
   imageSrc: string;
   tags: readonly string[];
+  link: string | undefined;
+  githubLink: string | undefined;
 }) {
   return (
     <motion.div
@@ -837,22 +851,22 @@ function ProjectCard({
         </ul>
 
         <div className="flex gap-2 justify-between mt-auto">
-        <motion.a href="https://github.com/tevinedwardz" target="_blank" rel="noopener noreferrer">
+        {githubLink && <motion.a href={githubLink} target="_blank" rel="noopener noreferrer">
         <motion.button
           whileHover={{ x: 5 }}
           className="text-sm opacity-70 group-hover:opacity-100"
         >
           GitHub
         </motion.button>
-        </motion.a>
-        <motion.a href="https://github.com/tevinedwardz" target="_blank" rel="noopener noreferrer">
+        </motion.a>}
+        {link && <motion.a href={link} target="_blank" rel="noopener noreferrer">
           <motion.button
           whileHover={{ x: 5 }}
           className="text-sm underline opacity-70 group-hover:opacity-100"
         >
           View Demo →
         </motion.button>
-        </motion.a>
+        </motion.a>}
         </div>
       </div>
     </motion.div>
