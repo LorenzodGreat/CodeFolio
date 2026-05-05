@@ -760,6 +760,18 @@ function Projects() {
 
       <div className="grid md:grid-cols-3 gap-6">
         <ProjectCard
+          title="CDSH Dashboard"
+          desc="CDSH is a structured digital solution focused on delivering a clean, user-friendly interface for managing and presenting information efficiently. The project emphasizes modern UI/UX principles, responsive design, and scalable architecture."
+          imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oJQ1rUthjQgdB4Mhi6K3WfN5IRLseZxclkTu7"}
+          tags={["Laravel", "PHP", "Ql/SQL", "Tailwind CSS", "CSS", "Oracle Apex"]}
+        />
+        <ProjectCard
+          title="PRESTEZA"
+          desc="Build and manage a full-featured modern ecommerce platform with customer shopping flows, secure checkout, account dashboards, and an admin control center—powered by Next.js, Supabase, and Stripe."
+          imageSrc={"https://presteza.vercel.app"}
+          tags={["Next.js", "Supabase", "Tailwind CSS", "CSS", "Stripe"]}
+        />
+        <ProjectCard
           title="RecipeNest"
           desc="RecipeNest exists to make great food more discoverable. Whether you are planning weeknight dinners or looking for inspiration from chefs you admire, we want every visit to feel welcoming, practical, and genuinely useful in the kitchen."
           imageSrc={"/recipenest.png"}
@@ -873,7 +885,7 @@ function Blog() {
       <LinkedInFeaturedPost />
       <BlogPost
         title="Designing Cornershop Jamaica"
-        imageSrc={"/cornershop.png"}
+        imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oYK3wtFjkNQmzeUx9b0FXBtR6OHIhr1ZwnVSv"}
       />
     </Section>
   );
