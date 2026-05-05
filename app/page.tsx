@@ -822,7 +822,7 @@ function ProjectCard({
   return (
     <motion.div
       whileHover={{ y: -8 }}
-      className="group relative rounded-2xl bg-gradient-to-br from-white/14 via-white/8 to-white/14 p-px transition-all duration-300 hover:from-cyan-400/80 hover:via-violet-500/65 hover:to-fuchsia-500/80 hover:shadow-[0_0_0_1px_rgba(99,102,241,0.35),0_10px_42px_-10px_rgba(99,102,241,0.5),0_0_56px_-14px_rgba(168,85,247,0.35),0_0_80px_-24px_rgba(6,182,212,0.22)] h-full"
+      className="group relative rounded-2xl bg-gradient-to-br from-white/14 via-white/8 to-white/14 p-px transition-all duration-300 hover:from-[radial-gradient(ellipse_70%_50%_at_20%_38%,rgba(139,92,246,0.22),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(6,182,212,0.12),transparent_40%),radial-gradient(circle_at_90%_85%,rgba(168,85,247,0.12),transparent_35%)] hover:to-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] hover:shadow-[0_0_0_1px_rgba(99,102,241,0.35),0_10px_42px_-10px_rgba(99,102,241,0.5),0_0_56px_-14px_rgba(168,85,247,0.35),0_0_80px_-24px_rgba(6,182,212,0.22)] h-full"
     >
       <div className="rounded-[15px] bg-white/5 p-6 backdrop-blur-md h-full">
         <div className="mb-5 overflow-hidden rounded-xl border border-white/10">
@@ -856,7 +856,7 @@ function ProjectCard({
           whileHover={{ x: 5 }}
           className="text-sm opacity-70 group-hover:opacity-100"
         >
-          GitHub
+          View on GitHub
         </motion.button>
         </motion.a>}
         {link && <motion.a href={link} target="_blank" rel="noopener noreferrer">
