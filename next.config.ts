@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         hostname: "cdn.jsdelivr.net",
         pathname: "/npm/simple-icons@*/icons/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "6fbnnth5ql.ufs.sh",
+        pathname: "/**",
+      },
     ],
   },
 };

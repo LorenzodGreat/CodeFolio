@@ -768,25 +768,25 @@ function Projects() {
         <ProjectCard
           title="PRESTEZA"
           desc="Build and manage a full-featured modern ecommerce platform with customer shopping flows, secure checkout, account dashboards, and an admin control center—powered by Next.js, Supabase, and Stripe."
-          imageSrc={"https://presteza.vercel.app"}
+          imageSrc={"https://img.freepik.com/free-vector/coming-soon-background-with-focus-light-effect-design_1017-27277.jpg?semt=ais_hybrid&w=740&q=80"}
           tags={["Next.js", "Supabase", "Tailwind CSS", "CSS", "Stripe"]}
         />
         <ProjectCard
           title="RecipeNest"
           desc="RecipeNest exists to make great food more discoverable. Whether you are planning weeknight dinners or looking for inspiration from chefs you admire, we want every visit to feel welcoming, practical, and genuinely useful in the kitchen."
-          imageSrc={"/recipenest.png"}
+          imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oNMbqSH8WKTF367o4yiEAuVLleJQPCYrv19xc"}
           tags={["Laravel", "PHP", "MySQL", "Tailwind CSS", "CSS", "Alpine.js"]}
         />
         <ProjectCard
           title="RAF Tech"
           desc="R.A.F Security represents the apex of surveillance and response. We don't just secure spaces; we engineer peace of mind through unyielding professionalism and state-of-the-art intelligence."
-          imageSrc={"/raftech.png"}
+          imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oaso7lbYYGXflTAjEkWe5DxvBS78Voa9u34y0"}
           tags={["Next.js", "TypeScript", "Tailwind CSS", "CSS", "Framer Motion"]}
         />
         <ProjectCard
           title="Cornershop Jamaica (Coming Soon)"
           desc="Cornershop Jamaica is a platform for buying and selling products in Jamaica."
-          imageSrc={"/Screenshot.png"}
+          imageSrc={"https://6fbnnth5ql.ufs.sh/f/gwqORjyX218oYK3wtFjkNQmzeUx9b0FXBtR6OHIhr1ZwnVSv"}
           tags={["Next.js", "TypeScript", "Tailwind CSS", "CSS", "Framer Motion"]}
         />
       </div>
