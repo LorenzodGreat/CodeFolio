@@ -57,6 +57,13 @@ const projectCardItem = {
   },
 } satisfies Variants;
 
+/** Shared scroll-reveal settings for all full-width / in-page sections */
+const sectionViewport = {
+  once: true,
+  amount: 0.12,
+  margin: "0px 0px -10% 0px",
+} as const;
+
 /** Simple Icons (monochrome SVGs) — shown as light marks on dark bg via invert */
 const MARQUEE_LOGOS = [
   {
@@ -361,8 +368,12 @@ function TechMarquee() {
   const loop = [...MARQUEE_LOGOS, ...MARQUEE_LOGOS];
 
   return (
-    <div
+    <motion.div
       aria-hidden
+      initial="hidden"
+      whileInView="show"
+      viewport={sectionViewport}
+      variants={fadeUp}
       className="relative overflow-hidden border-y border-white/10 bg-white/[0.03] py-5 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
     >
       <motion.div
@@ -390,7 +401,7 @@ function TechMarquee() {
           </span>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -402,7 +413,7 @@ function Section({ children, id }: { children: React.ReactNode; id: string }) {
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={sectionViewport}
     >
       {children}
     </motion.section>
@@ -531,14 +542,7 @@ function About() {
   ] as const;
 
   return (
-    <motion.section
-      id="about"
-      className="mx-auto max-w-5xl px-6 py-24"
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-    >
+    <Section id="about">
       <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
         {/* Left: timeline + services */}
         <div className="relative">
@@ -585,7 +589,7 @@ function About() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </Section>
   );
 }
 
@@ -782,7 +786,7 @@ function Projects() {
         variants={projectStaggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.12 }}
+        viewport={sectionViewport}
       >
         <ProjectCard
           title="Career Development & Sustainability Hub - (CDSH) Dashboard"
@@ -938,13 +942,7 @@ function LinkedInFeaturedPost() {
 
   if (embedSrc) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
-      >
+      <div className="mb-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-violet-300/90">
@@ -972,7 +970,7 @@ function LinkedInFeaturedPost() {
             allowFullScreen
           />
         </div>
-      </motion.div>
+      </div>
     );
   }
 
@@ -981,9 +979,6 @@ function LinkedInFeaturedPost() {
       href={postUrl}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
       whileHover={{ x: 6 }}
       className="flex gap-4 border-b border-white/10 py-4 cursor-pointer items-center"
     >
@@ -1041,13 +1036,7 @@ function Contact() {
           Open to freelance and full-time opportunities.
         </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-10 mx-auto w-full max-w-4xl text-left rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
-        >
+        <div className="mb-10 mx-auto w-full max-w-4xl text-left rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
           <div
             className="calendly-inline-widget"
             data-url={CALENDLY_URL}
@@ -1057,7 +1046,7 @@ function Contact() {
             src="https://assets.calendly.com/assets/external/widget.js"
             strategy="lazyOnload"
           />
-        </motion.div>
+        </div>
       </div>
     </Section>
   );
@@ -1065,7 +1054,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="py-10 text-center border-t border-white/10">
+    <motion.footer
+      initial="hidden"
+      whileInView="show"
+      viewport={sectionViewport}
+      variants={fadeUp}
+      className="py-10 text-center border-t border-white/10"
+    >
       <p className="text-gray-500 text-sm mb-4">
         © {new Date().getFullYear()} Tevin Edwards
       </p>
@@ -1074,6 +1069,6 @@ function Footer() {
         <a href="#" className="hover:text-gray-300">GitHub</a>
         <a href="#" className="hover:text-gray-300">Twitter</a>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
